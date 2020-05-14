@@ -1,6 +1,6 @@
 import "./scss/index.scss";
 
 async function start() {
-    await Promise.resolve();
+    return await Promise.resolve();
 }
 start();
