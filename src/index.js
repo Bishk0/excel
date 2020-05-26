@@ -5,10 +5,14 @@ import { Formula } from '@/components/formula/Formula';
 import { Table } from '@/components/table/Table';
 import { createStore } from '@core/createStore';
 import { rootReducer } from '@/redux/rootReducer';
+import { storage } from '@core/utils';
 import './scss/index.scss';
 
-const store = createStore(rootReducer, {
-  colState: {},
+const store = createStore(rootReducer, storage('excel-state'));
+
+store.subscribe(state => {
+  storage('excel-state', state);
+  console.log(state);
 });
 
 const excel = new Excel('#app', {
