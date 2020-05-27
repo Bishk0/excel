@@ -12,7 +12,7 @@ function toButton(button) {
   `;
 }
 
-export function createToolbar() {
+export function createToolbar(state) {
   const buttons = [
     {
       icon: 'format_align_left',
@@ -31,18 +31,19 @@ export function createToolbar() {
     },
     {
       icon: 'format_bold',
-      active: false,
-      value: {fontWeight: 'bold'},
+      active: state['fontWeight'] === 'bold',
+      value: {fontWeight: state['fontWeight'] === 'bold' ? 'normal' : 'bold'},
     },
     {
       icon: 'format_italic',
-      active: false,
-      value: {fontStyle: 'italic'},
+      active: state['fontStyle'] === 'italic',
+      value: {fontStyle: state['fontStyle'] === 'italic' ? 'normal' : 'italic'},
     },
     {
       icon: 'format_underline',
-      active: false,
-      value: {fontDecoration: 'underline'},
+      active: state['textDecoration'] === 'underline',
+      value: {textDecoration:
+          state['textDecoration'] === 'underline' ? 'none' : 'underline'},
     },
   ];
 
