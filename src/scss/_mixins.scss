@@ -4,11 +4,14 @@
   padding: 3px;
   text-align: center;
   position: relative;
-  display: inline-block;
+  display: inline-flex;
   color: rgba(0, 0, 0, 0.7);
+
 
   & i {
     font-size: 18px;
+    display: flex;
+    align-items: center;
   }
   &:active,
   &.active {
